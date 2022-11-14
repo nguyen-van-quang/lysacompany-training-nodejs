@@ -1,0 +1,23 @@
+<div class="text-light">
+    <h1 class="text-warning my-3">New Posts</h1>
+    <ul>
+      {{#each POSTS}}
+        <div id="{{ slug }}" class="post">
+            <h1>{{ title }}</h1>
+            <div>
+                {{ slug }}
+            </div>
+        </div>
+      {{/each}}
+    </ul>
+    <h1 class="text-warning my-3">Top Posts</h1>
+
+    <script>
+        var postElements = document.querySelectorAll(".post");
+        postElements.forEach(el => {
+            el.addEventListener('click', () => {
+                    location.href = "/blog/post/"+el.id;
+            })
+        })
+    </script>
+</div>
